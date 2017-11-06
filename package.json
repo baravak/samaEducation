@@ -4,7 +4,7 @@
   "main": "main.js",
   "scripts": {
     "start": "electron . ",
-    "build-linux": "electron-packager . Sama --overwrite --asar=true --icon=static/images/logo.ico",
+    "build-linux": "electron-packager . Sama --overwrite --ignore=config.json --icon=static/images/logo.ico",
     "build-win": "electron-packager . Sama --overwrite --icon=static/images/logo.ico --platform=win32",
     "rebuild-win-sqlite3": "electron-rebuild -f -w sqlite3"
   },

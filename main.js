@@ -1,36 +1,3 @@
-const fs = require('fs');
-const machine_id = require("node-machine-id");
-if(!fs.existsSync("./config.json"))
-{
-	fs.writeFileSync("./config.json", '{"ID": "'+machine_id.machineIdSync()+'"}');
-}
-else
-{
-	var changed = false;
-	const config = require("./config.json");
-	if(config.sys && config.sys.db)
-	{
-		if(!fs.existsSync(config.sys.db))
-		{
-			changed = true;
-			config.sys.db = null;
-		}
-	}
-	if(config.ID != machine_id.machineIdSync())
-	{
-		changed = true;
-		config.ID = machine_id.machineIdSync();
-		if(config.sys)
-		{
-			delete config.sys;
-		}
-	}
-	if(changed)
-	{
-		fs.writeFileSync("./config.json", JSON.stringify(config));
-	}
-}
-
 const {app, BrowserWindow} = require('electron')
 const path = require('path')
 const url = require('url')
@@ -53,7 +20,7 @@ function createWindow () {
 		slashes: true
 	}))
 
-	win.webContents.openDevTools()
+	win.webContents.openDevTools();
 
 	win.on('closed', () => {
 		win = null
