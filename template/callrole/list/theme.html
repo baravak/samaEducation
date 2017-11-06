@@ -1,0 +1,22 @@
+<div class="ui main text container" id="content">
+	<h2>لیست حضور غیاب</h2>
+	<table class="ui single line table fixed" id="list">
+		<thead>
+			<tr>
+				<th class="six wide">نام و نام خانوادگی</th>
+				<th>درس</th>
+				<th>تاریخ</th>
+				<th>غیبت</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr v-for="r in rollcall">
+				<td>{{r.name}} {{r.family}}  {{r.unique_code}}</td>
+				<td>{{r.unit_title}} | ترم {{r.term}}</td>
+				<td>{{r.time}}</td>
+				<td v-if="r.absence == 0">غیبت</td>
+				<td v-else>تاخیر {{r.absence}} دقیقه</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

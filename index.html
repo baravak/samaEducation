@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <link rel="shortcut icon"    href="static/images/logo.png"/>
+  <title>Fixed Menu Example - Semantic</title>
+
+  <link rel="stylesheet" type="text/css" href="static/persian-datepicker/css/persian-datepicker.min.css">
+  <link rel="stylesheet" type="text/css" href="static/semantic/semantic.rtl.css">
+  <link rel="stylesheet" type="text/css" href="static/semantic/components/reset.rtl.css">
+  <link rel="stylesheet" type="text/css" href="static/semantic/components/site.rtl.css">
+
+  <link rel="stylesheet" type="text/css" href="static/semantic/components/container.rtl.css">
+  <link rel="stylesheet" type="text/css" href="static/semantic/components/grid.rtl.css">
+  <link rel="stylesheet" type="text/css" href="static/semantic/components/header.rtl.css">
+  <link rel="stylesheet" type="text/css" href="static/semantic/components/image.rtl.css">
+  <link rel="stylesheet" type="text/css" href="static/semantic/components/menu.rtl.css">
+
+  <link rel="stylesheet" type="text/css" href="static/semantic/components/divider.rtl.css">
+  <link rel="stylesheet" type="text/css" href="static/semantic/components/list.rtl.css">
+  <link rel="stylesheet" type="text/css" href="static/semantic/components/segment.rtl.css">
+  <link rel="stylesheet" type="text/css" href="static/semantic/components/dropdown.rtl.css">
+  <link rel="stylesheet" type="text/css" href="static/semantic/components/icon.rtl.css">
+  <link rel="stylesheet" type="text/css" href="static/css/style.css">
+
+</head>
+<body class="rtl">
+  <div class="ui fixed inverted menu">
+    <div class="ui container">
+      <a href="#" class="header item">
+        <img class="logo" src="static/images/logo.ico">
+        سیستم آموزشی سما
+      </a>
+      <div class="ui simple dropdown item">
+        طلاب <i class="dropdown icon"></i>
+        <div class="menu">
+          <a class="item" href="#students/add">ثبت‌نام طلبه</a>
+          <a class="item" href="#students/list">لیست طلاب</a>
+        </div>
+      </div>
+      <div class="ui simple dropdown item">
+      حضور و غیاب <i class="dropdown icon"></i>
+        <div class="menu">
+          <a class="item" href="#callrole/add">ثبت غیبت</a>
+          <a class="item" href="#callrole/list">لیست حضور و غیاب</a>
+        </div>
+      </div>
+      <div class="ui simple dropdown item">
+      کلاس‌بندی <i class="dropdown icon"></i>
+        <div class="menu">
+          <a class="item" href="#classification/unit/add">ثبت واحد</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ui main text container" id="content">
+  </div>
+
+  <div class="ui inverted vertical footer segment">
+    <div class="ui center aligned container">
+      <div class="ui inverted section divider"></div>
+      <img src="static/images/logo.png" class="ui centered mini image">
+      <div class="ui horizontal inverted small divided link list">
+        <a class="item" href="#">Site Map</a>
+        <a class="item" href="#">Contact Us</a>
+        <a class="item" href="#">Terms and Conditions</a>
+        <a class="item" href="#">Privacy Policy</a>
+      </div>
+    </div>
+  </div>
+  <script>window.$ = window.jQuery = require('./static/js/jquery.js');</script>
+  <script type="text/javascript" src="static/persian-datepicker/js/persian-date.min.js"></script>
+  <script type="text/javascript" src="static/persian-datepicker/js/persian-datepicker.min.js"></script>
+  <script type="text/javascript" src="static/semantic/semantic.js"></script>
+  <script type="text/javascript" src="static/semantic/components/dropdown.js"></script>
+  <script src="https://unpkg.com/vue"></script>
+  <script type="text/javascript" src="static/js/main.js"></script>
+</body>
+
+</html>

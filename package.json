@@ -1,0 +1,22 @@
+{
+  "name": "Sama",
+  "version": "0.1.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron . ",
+    "build-linux": "electron-packager . Sama --overwrite --asar=true --icon=static/images/logo.ico",
+    "build-win": "electron-packager . Sama --overwrite --icon=static/images/logo.ico --platform=win32",
+    "rebuild-win-sqlite3": "electron-rebuild -f -w sqlite3"
+  },
+  "dependencies": {
+    "electron": "^1.7.9",
+    "jalaali-js": "^1.0.0",
+    "node-machine-id": "^1.1.9",
+    "sqlite3": "^3.1.13"
+  },
+  "devDependencies": {
+    "electron": "^1.7.9",
+    "electron-rebuild": "^1.6.0",
+    "sqlite3": "^3.1.13"
+  }
+}

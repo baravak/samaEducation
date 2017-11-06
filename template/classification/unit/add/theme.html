@@ -1,0 +1,44 @@
+<div class="ui main text container" id="content">
+	<form class="ui form segment" id="unit-add-form">
+		<h2>ثبت واحد درسی</h2>
+		<div class="three fields wide">
+			<div class="field ten wide">
+				<label for="unit_title">عنوان واحد</label>
+				<input type="text" id="unit_title" placeholder="عنوان واحد درسی">
+			</div>
+			<div class="field">
+				<label>ترم درسی</label>
+				<div class="ui selection dropdown">
+				<input type="hidden" name="term" id="term">
+					<i class="dropdown icon"></i>
+					<div class="default text">ترم</div>
+					<div class="menu">
+						<div class="item" data-value="1">اول</div>
+						<div class="item" data-value="2">دوم</div>
+						<div class="item" data-value="3">تابستان</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="fields wide ltr">
+			<button type="submit" class="ui teal labeled icon button">
+				ثبت واحد
+				<i class="add icon"></i>
+			</button>
+		</div>
+	</form>
+	<table class="ui single line table" id="list">
+		<thead>
+			<tr>
+				<th>نام و نام خانوادگی</th>
+				<th>ترم</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr v-for="unit in units">
+				<td>{{unit.unit_title}}</td>
+				<td>{{unit.term}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

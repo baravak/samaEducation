@@ -1,0 +1,47 @@
+<div class="ui main text container" id="content">
+	<form class="ui form" id="student-add-form">
+		<h2>مشخصات فردی طلبه</h2>
+		<div class="three fields">
+			<div class="field">
+				<label for="name">نام</label>
+				<input type="text" id="name" placeholder="نام طلبه">
+			</div>
+			<div class="field">
+				<label for="family">نام خانوادگی</label>
+				<input type="text" id="family" placeholder="نام خانوادگی">
+			</div>
+			<div class="field">
+				<label for="father_name">نام پدر</label>
+				<input type="text" id="fname" placeholder="نام پدر">
+			</div>
+		</div>
+		<div class="two fields wide">
+			<div class="field">
+				<label for="ncode">کدملی</label>
+				<input type="text" id="ncode" class="ltr" placeholder="کد ملی ده رقمی بدون خط تیره">
+			</div>
+			<div class="field">
+				<label for="unique_code">شماره پرونده</label>
+				<input type="text" id="unique_code" class="ltr" placeholder="شماره پرونده مرکز مدیریت">
+			</div>
+		</div>
+		<div class="fields wide ltr">
+			<button type="submit" class="ui teal labeled icon button">
+				ثبت‌نام طلبه
+				<i class="add icon"></i>
+			</button>
+		</div>
+	</form>
+	<table class="ui single line table hidden" id="list">
+		<thead>
+			<tr>
+			<th>نام و نام خانوادگی</th>
+				<th>نام پدر</th>
+				<th>کدملی</th>
+				<th>شماره پرونده</th>
+			</tr>
+		</thead>
+		<tbody>
+		</tbody>
+	</table>
+</div>

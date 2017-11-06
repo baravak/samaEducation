@@ -1,0 +1,21 @@
+<div class="ui main text container" id="content">
+	<h2>لیست طلاب ثبت‌نام شده</h2>
+	<table class="ui single line table fixed" id="list">
+		<thead>
+			<tr>
+				<th>نام و نام خانوادگی</th>
+				<th>نام پدر</th>
+				<th>کدملی</th>
+				<th>شماره پرونده</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr v-for="student in students">
+				<td>{{student.name}} {{student.family}}</td>
+				<td>{{student.fname}}</td>
+				<td>{{student.ncode}}</td>
+				<td>{{student.unique_code}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

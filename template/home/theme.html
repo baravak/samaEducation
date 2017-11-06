@@ -1,0 +1,55 @@
+<div class="ui main text container" id="content">
+	<h1>صفحه نخست</h1>
+	<div v-if="activeDatabase">
+		<p>بهترین‌ها را برایتان آرزو می‌کنیم</p>
+	</div>
+	<div v-else>
+		<div class="ui aligned basic segment">
+			<p>اگر فایل پایگاه داده‌ها درون رایانه شما موجود می‌باشد، از قسمت زیر مسیر پایگاه داده‌ها را انتخاب نمایید.</p>
+			<form id="select-db">
+				<div class="ui form">
+					<div class="two fields">
+						<div class="field">
+							<label>انتخاب پایگاه داده‌ها</label>
+							<input type="file" id="select-db-file">
+						</div>
+						<div class="field">
+							<label>آدرس انتخابی</label>
+							<input class="ltr" type="text" readonly="" placeholder="مسیر ذخیره‌سازی..." id="select-db-path">
+						</div>
+					</div>
+					<div class="field">
+						<button type="submit" class="ui blue labeled icon button">
+							ثبت پایگاه داده‌ها
+							<i class="add icon"></i>
+						</button>
+					</div>
+				</div>
+			</form>
+			<div class="ui horizontal divider">
+				در غیر اینصورت
+			</div>
+			<p>از قسمت زیر پوشه‌ای را جهت ذخیره سازی پایگاه داده‌ها انتخاب نمایید.</p>
+			<form id="dir-db">
+				<div class="ui form">
+					<div class="two fields">
+						<div class="field">
+							<label>انتخاب پوشه ذخیره‌سازی</label>
+							<input type="file" webkitdirectory mozdirectory msdirectory odirectory directory id="dir-db-file">
+						</div>
+						<div class="field">
+							<label>آدرس انتخابی</label>
+							<input type="text" readonly="" placeholder="مسیر ذخیره‌سازی..." id="dir-db-path">
+						</div>
+					</div>
+					<div class="field center">
+						<button type="submit" class="ui teal labeled icon button">
+							ساخت پایگاه داده‌ها
+							<i class="add icon"></i>
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

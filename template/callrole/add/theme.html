@@ -1,0 +1,66 @@
+<div class="ui main text container" id="content">
+	<form class="ui form" id="callrole-add-form">
+		<h2>ثبت غیبت</h2>
+		<div class="field">
+			<div class="field">
+				<label for="student">شماره پرونده</label>
+				<div class="ui fluid search selection dropdown" id="find-user">
+					<input type="hidden" id="student">
+					<i class="dropdown icon"></i>
+					<div class="default text">انتخاب دانش آموز</div>
+					<div class="menu">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="two fields wide">
+			<div class="field">
+				<label for="unit">واحد درسی</label>
+				<div class="ui fluid search selection dropdown" id="find-unit">
+					<input type="hidden" id="unit">
+					<i class="dropdown icon"></i>
+					<div class="default text">انتخاب واحد درسی</div>
+					<div class="menu">
+					</div>
+				</div>
+			</div>
+			<div class="field">
+				<label for="time-st">تاریخ</label>
+				<input type="text" id="time-st" class="ltr" placeholder="تاریخ">
+				<input type="hidden" id="time">
+			</div>
+		</div>
+		<div class="two fields">
+			<div class="field">
+				<label for="lag">تاخیر/غیبت</label>
+				<div class="ui slider checkbox">
+					<input type="checkbox" tabindex="0" class="hidden" id="absent">
+					<label for="absent">غیبت</label>
+				</div>
+			</div>
+			<div class="field">
+				<label for="lag">زمان تاخیر</label>
+				<input type="text" id="lag" placeholder="زمان تاخیر به دقیقه">
+			</div>
+		</div>
+		<div class="fields wide ltr">
+			<button type="submit" class="ui teal labeled icon button">
+				ثبت غیبت
+				<i class="add icon"></i>
+			</button>
+		</div>
+	</form>
+	<table class="ui single line table hidden" id="list">
+		<thead>
+			<tr>
+				<th>نام و نام خانوادگی</th>
+				<th>نام پدر</th>
+				<th>عنوان درس</th>
+				<th>تاریخ</th>
+				<th>غیبت</th>
+			</tr>
+		</thead>
+		<tbody>
+		</tbody>
+	</table>
+</div>
