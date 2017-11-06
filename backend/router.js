@@ -1,8 +1,8 @@
 let fs = require('fs');
 let path = require('path');
 let $ = require('../static/js/jquery.js');
-let T_PATH = "./template";
-let C_PATH = "../template";
+let T_PATH = path.join(__dirname, "..", "template");
+let C_PATH = path.join(__dirname, "..", "template");
 function router(_url)
 {
 	var url = _url == "" || _url == "/" || undefined || null ? 'home' : _url;
