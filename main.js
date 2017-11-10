@@ -11,6 +11,7 @@ function createWindow () {
 		backgroundColor: '#312450',
 		center : true,
 		title : "Sama",
+		// titleBarStyle : 'hiddenInset'
 		// fullscreen : true,
 	});
 

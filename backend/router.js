@@ -5,7 +5,21 @@ let T_PATH = path.join(__dirname, "..", "template");
 let C_PATH = path.join(__dirname, "..", "template");
 function router(_url)
 {
-	var url = _url == "" || _url == "/" || undefined || null ? 'home' : _url;
+	if(!_url)
+	{
+		_url = "";
+	}
+	var get_parm = _url.match(/^([^:]*)(:(.*))?$/);
+	var property = {};
+	if(get_parm[3])
+	{
+		var _p = get_parm[3].split(":");
+		for (var i = 0; i < _p.length; i++) {
+			var _pv = _p[i].match(/^([^=]*)(=(.*))?$/);
+			property[_pv[1]] = _pv[3];
+		}
+	}
+	var url = get_parm[1] == "" || get_parm[1] == "/" ? 'home' : get_parm[1];
 	var url_array = url.split(/\//);
 	var file_path = path.join(T_PATH, url, 'theme.html');
 	var theme = fs.readFileSync(file_path, 'utf8');
@@ -14,7 +28,8 @@ function router(_url)
 	var config = require(config_path);
 	var options = {
 		'url' : url,
-		'url_array' : url_array
+		'url_array' : url_array,
+		'property' : property
 	};
 	theme_analisor.call(options, theme, config);
 }
@@ -76,6 +91,6 @@ window.onhashchange = function()
 	var path = location.hash.replace('#', '');
 	router(path);
 }
-router("/");
+router("rollcall/view:id=1");
 module.exports = router;
 

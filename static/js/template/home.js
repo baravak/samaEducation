@@ -47,7 +47,7 @@ $(document).on('submit', "#dir-db", function()
 	{
 		if(!config.sys) config.sys = {};
 		var db = new sqlite3.Database(file_path);
-		db.exec("CREATE TABLE `rollcall` (`id` INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE, `time` TEXT, `student_id` INTEGER, `unit_id` INTEGER, `absence` INTEGER, `Justified` INTEGER, `cause` TEXT); CREATE TABLE `students` ( `id` INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE, `unique_code` INTEGER UNIQUE, `ncode` TEXT UNIQUE, `name` TEXT, `family` TEXT, `fname` TEXT);CREATE TABLE `units` (`id` INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE, `unit_title` TEXT UNIQUE, `term` INTEGER);")
+		db.exec("CREATE TABLE `rollcall` (`id` INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE, `time` TEXT, `student_id` INTEGER, `unit_id` INTEGER, `absence` INTEGER, `justified` INTEGER, `cause` TEXT); CREATE TABLE `students` ( `id` INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE, `unique_code` INTEGER UNIQUE, `ncode` TEXT UNIQUE, `name` TEXT, `family` TEXT, `fname` TEXT);CREATE TABLE `units` (`id` INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE, `unit_title` TEXT UNIQUE, `term` INTEGER);")
 		config.sys.db = file_path;
 		fs.writeFileSync(path.join(__dirname, "..", "..", "..", "config.json"), JSON.stringify(config));
 		router("/");

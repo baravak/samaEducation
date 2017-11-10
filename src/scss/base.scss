@@ -22,7 +22,43 @@ h1,h2,h3,h4,h5,h6
 	font-weight: 900;
 	color: #328084;
 }
-
+.month, .wday {
+	font-size: 8px;
+}
+svg g rect{
+	fill: #fbfafa;
+	width: 10px;
+	height: 10px;
+	cursor: pointer;
+}
+svg g rect:hover
+{
+	outline: 1px solid #9a9a9a;
+}
+svg g rect[data-count="0"]{
+	fill: #e2e2e2;
+}
+svg g rect[data-count="1"]{
+	fill: #efd7d7;
+}
+svg g rect[data-count="2"]{
+	fill: #ecc5c5;
+}
+svg g rect[data-count="3"]{
+	fill: #ecbcbc;
+}
+svg g rect[data-count="4"]{
+	fill: #ecb1b1;
+}
+svg g rect[data-count="5"]{
+	fill: #eca5a5;
+}
+svg g rect[data-count="6"]{
+	fill: #ef9b9b;
+}
+svg g rect[data-count="7"]{
+	fill: #ef8f8f;
+}
 .hidden{
 	display: none;
 }
@@ -31,29 +67,29 @@ h1,h2,h3,h4,h5,h6
 {
 	font-size: 0.7em;
 }
-// *:not(.selectable) {
-//   -webkit-touch-callout: none; /* iOS Safari */
-//     -webkit-user-select: none; /* Safari */
-//      -khtml-user-select: none; /* Konqueror HTML */
-//        -moz-user-select: none; /* Firefox */
-//         -ms-user-select: none; /* Internet Explorer/Edge */
-//             user-select: none; /* Non-prefixed version, currently
-//                                   supported by Chrome and Opera */
-// }
-p, div,h1,h2,h3,h4,h5,h6
-{
-	cursor: default;
-}
-.ui.menu .item img.logo {
-	margin-left: 1.5em;
-}
-.main.container {
-	margin-top: 7em;
-}
-.wireframe {
-	margin-top: 2em;
-}
-.ui.footer.segment {
-	margin: 5em 0em 0em;
-	padding: 5em 0em;
-}
+*:not(.selectable) {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+                              }
+                              p, div,h1,h2,h3,h4,h5,h6
+                              {
+                              	cursor: default;
+                              }
+                              .ui.menu .item img.logo {
+                              	margin-left: 1.5em;
+                              }
+                              .main.container {
+                              	margin-top: 7em;
+                              }
+                              .wireframe {
+                              	margin-top: 2em;
+                              }
+                              .ui.footer.segment {
+                              	margin: 5em 0em 0em;
+                              	padding: 5em 0em;
+                              }
