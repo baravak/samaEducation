@@ -1,5 +1,5 @@
 <div class="ui main text container" id="content">
-	<h2>لیست حضور غیاب</h2>
+	<h2>نقشه یکساله <small><small>/ {{student.name}} {{student.family}} / {{student.unique_code.parseFa()}}</small></small></h2>
 	<div class="ui form">
 		<div class="four fields rollcall-filter">
 			<div class="field">
@@ -520,19 +520,28 @@
 	<table class="ui single line table fixed" id="list">
 		<thead>
 			<tr>
-				<th class="six wide">نام و نام خانوادگی</th>
+				<th class="five wide">نام و نام خانوادگی</th>
 				<th>درس</th>
 				<th>تاریخ</th>
 				<th>غیبت</th>
+				<th>موجه</th>
+				<th>علت</th>
+				<th><i class="options icon"></i></th>
 			</tr>
 		</thead>
 		<tbody>
-			<tr v-for="r in rollcall">
-				<td>{{r.name}} {{r.family}}  {{r.unique_code}}</td>
-				<td>{{r.unit_title}} | ترم {{r.term}}</td>
-				<td>{{r.time}}</td>
-				<td v-if="r.absence == 0">غیبت</td>
-				<td v-else>تاخیر {{r.absence}} دقیقه</td>
+			<tr v-for="r in rollcall" :data-content="r.cause" class="popup">
+				<td>{{r.name}} {{r.family}}  {{r.unique_code.parseFa()}}</td>
+				<td>{{r.unit_title}} | ترم {{r.term.parseFa()}}</td>
+				<td>{{r.time.parseFa()}}</td>
+				<td v-if="r.absence == 0"><i class="alarm mute icon red"></i></td>
+				<td v-else><i class="wait icon yellow"></i> {{r.absence.parseFa()}}</td>
+				<td v-if="r.justified == 1"><i class="selected radio icon blue"></i></td>
+				<td v-else><i class="radio icon red"></i></td>
+				<td>{{r.cause}}</td>
+				<td>
+					<a :href="'#rollcall/edit:id=' + r.rid "><i class="edit icon blue"></i></a>
+				</td>
 			</tr>
 		</tbody>
 	</table>

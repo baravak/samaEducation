@@ -12,7 +12,8 @@
     "electron": "^1.7.9",
     "jalaali-js": "^1.0.0",
     "node-machine-id": "^1.1.9",
-    "sqlite3": "^3.1.13"
+    "sqlite3": "^3.1.13",
+    "xlsx": "^0.11.8"
   },
   "devDependencies": {
     "electron": "^1.7.9",

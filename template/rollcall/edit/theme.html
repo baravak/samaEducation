@@ -1,0 +1,72 @@
+<div class="ui main text container" id="content">
+	<div class="ui dimmer inverted page">
+		<div class="content">
+			<div class="center black">
+				<h2 class="ui inverted icon header blue iranSans">
+					<i class="checkmark icon blue"></i>
+					باموفقیت تغییر کرد!
+					<hr>
+				</h2>
+				<br>
+				<a :href="'#rollcall/view:id=' + student.id "><i class="grid layout icon orange"></i></a>
+			</div>
+		</div>
+	</div>
+	<form class="ui form blurring" id="rollcall-edit-form">
+		<input type="hidden" id="rollcall_isd" :value="student.rid">
+		<h2>ویرایش غیبت <small><small> / {{student.name}} {{student.family}} {{student.unique_code.parseFa()}}</small></small></h2>
+		<div class="two fields wide">
+			<div class="field inline">
+				واحد درسی : <label>{{student.unit_title.parseFa()}} | {{student.term.parseFa()}}</label>
+			</div>
+			<div class="field inline">
+				تاریخ: <label>{{student.time.parseFa()}}</label>
+			</div>
+		</div>
+		<div class="two fields">
+			<div class="field">
+				<label for="absent">تاخیر/غیبت</label>
+				<div class="ui slider checkbox">
+					<input type="checkbox" tabindex="0" class="hidden" id="absent" v-bind:checked="student.absence < 1">
+					<label for="absent">غیبت</label>
+				</div>
+			</div>
+			<div class="field">
+				<label for="lag">زمان تاخیر</label>
+				<input type="text" id="lag" placeholder="زمان تاخیر به دقیقه" v-bind:value="student.absence > 0 ? student.absence : null"  v-bind:disabled="student.absence < 1">
+			</div>
+		</div>
+		<div class="two fields">
+			<div class="field">
+				<label for="justified">موجه/غیرموجه</label>
+				<div class="ui slider checkbox">
+					<input type="checkbox" tabindex="0" class="hidden" id="justified" v-bind:checked="student.justified != 1">
+					<label for="justified">غیرموجه</label>
+				</div>
+			</div>
+			<div class="field">
+				<label for="cause">علت</label>
+				<input type="text" id="cause" placeholder="زمان تاخیر به دقیقه" :value="student.cause">
+			</div>
+		</div>
+		<div class="fields wide ltr">
+			<button type="submit" class="ui blue labeled icon button">
+				ویرایش غیبت
+				<i class="add icon"></i>
+			</button>
+		</div>
+	</form>
+	<table class="ui single line table hidden" id="list">
+		<thead>
+			<tr>
+				<th>نام و نام خانوادگی</th>
+				<th>شماره پرونده</th>
+				<th>عنوان درس</th>
+				<th>تاریخ</th>
+				<th>غیبت</th>
+			</tr>
+		</thead>
+		<tbody>
+		</tbody>
+	</table>
+</div>

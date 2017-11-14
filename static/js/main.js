@@ -13,6 +13,11 @@ Number.prototype.parseFa = function()
 	});
 }
 
+$("#print-page").click(function()
+{
+print();
+});
+
 String.prototype.parseFa = function()
 {
 	return this.toString().replace(/\d/g, function(f){

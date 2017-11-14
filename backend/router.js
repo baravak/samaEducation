@@ -91,6 +91,6 @@ window.onhashchange = function()
 	var path = location.hash.replace('#', '');
 	router(path);
 }
-router("rollcall/view:id=1");
+router("rollcall/edit:id=12");
 module.exports = router;
 

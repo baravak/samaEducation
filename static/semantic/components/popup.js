@@ -520,8 +520,8 @@ $.fn.popup = function(parameters) {
               // element which is launching popup
               target : {
                 element : $target[0],
-                width   : $target.outerWidth() | $target[0].width.baseVal.value,
-                height  : $target.outerHeight() | $target[0].height.baseVal.value,
+                width   : $target[0].width ? $target[0].width.baseVal.value : false | $target.outerWidth(),
+                height  : $target[0].height ? $target[0].height.baseVal.value : false | $target.outerHeight(),
                 top     : targetPosition.top,
                 left    : targetPosition.left,
                 margin  : {}

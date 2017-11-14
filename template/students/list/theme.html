@@ -16,7 +16,7 @@
 				<td>{{student.fname}}</td>
 				<td>{{student.ncode}}</td>
 				<td>{{student.unique_code}}</td>
-				<td><a href="rollcal"><i class="exchange icon"></i>{{student.id}}</td>
+				<td><a :href="'#rollcall/view:id=' + student.id"><i class="exchange icon"></i></td>
 			</tr>
 		</tbody>
 	</table>
