@@ -34,5 +34,6 @@ else
 	}
 }
 
-require('./router.js');
+const router = require('./router.js');
+router.go("students/add:id=1");
 require('./db.js');

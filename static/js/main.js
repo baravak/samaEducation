@@ -15,7 +15,7 @@ Number.prototype.parseFa = function()
 
 $("#print-page").click(function()
 {
-print();
+	print();
 });
 
 String.prototype.parseFa = function()

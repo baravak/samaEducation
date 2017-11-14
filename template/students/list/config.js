@@ -10,6 +10,18 @@ module.exports = function(o){
 				"data" :
 				{
 					students : list
+				},
+				bindJS : function()
+				{
+					$(".popup").popup({
+						context : 'body',
+						hoverable  : true,
+						position   : 'bottom right',
+						delay: {
+							show: 0,
+							hide: 0
+						}
+					})
 				}
 			}
 			fn(theme);

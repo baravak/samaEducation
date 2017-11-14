@@ -1,4 +1,23 @@
 <div class="ui main text container" id="content">
+	<div class="ui basic modal" id="remove-modal">
+		<div class="ui icon header iranSans">
+			<i class="warning sign icon red"></i>
+			آیا قصد دارید این غیبت را حذف کنید؟
+		</div>
+		<div class="content">
+			<p>توجه داشته باشید که بعد از حذف امکان بازیابی وجود ندارد...</p>
+		</div>
+		<div class="actions">
+			<div class="ui red basic ok inverted button">
+				<i class="checkmark icon"></i>
+				بله، مطمئن هستم
+			</div>
+			<div class="ui green cancel inverted button">
+				<i class="remove icon"></i>
+				خیر
+			</div>
+		</div>
+	</div>
 	<div class="ui dimmer inverted page">
 		<div class="content">
 			<div class="center black">
@@ -52,21 +71,12 @@
 		<div class="fields wide ltr">
 			<button type="submit" class="ui blue labeled icon button">
 				ویرایش غیبت
-				<i class="add icon"></i>
+				<i class="edit icon"></i>
+			</button>
+			<button type="button" class="ui red labeled icon button" tabindex="-1" id="remove-callroll" :data-id="student.rid">
+				حذف
+				<i class="remove icon"></i>
 			</button>
 		</div>
 	</form>
-	<table class="ui single line table hidden" id="list">
-		<thead>
-			<tr>
-				<th>نام و نام خانوادگی</th>
-				<th>شماره پرونده</th>
-				<th>عنوان درس</th>
-				<th>تاریخ</th>
-				<th>غیبت</th>
-			</tr>
-		</thead>
-		<tbody>
-		</tbody>
-	</table>
 </div>

@@ -23,9 +23,32 @@ module.exports = function(o){
 							$("#lag").removeAttr('disabled');
 						}
 					});
+					$("#remove-callroll").click(function()
+					{
+						$("#remove-modal").modal({
+							onApprove : function()
+							{
+								var id = $("#remove-callroll").attr('data-id');
+								var router = require('../../../backend/router.js')
+								db.get("DELETE FROM rollcall WHERE id = ?",[id], function(err){
+									if(err)
+									{
+										alert(err);
+									}
+									else
+									{
+										$("#remove-modal").modal('hide');
+										history.back()
+									}
+								});
+								return false;
+							}
+						});
+						$("#remove-modal").modal('show');
+					})
 				}
 			}
 			fn(theme);
 		})
-	}
+}
 }

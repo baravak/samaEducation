@@ -3,8 +3,10 @@ let path = require('path');
 let $ = require('../static/js/jquery.js');
 let T_PATH = path.join(__dirname, "..", "template");
 let C_PATH = path.join(__dirname, "..", "template");
+const _HISTORY = [];
 function router(_url)
 {
+	_HISTORY.push(_url)
 	if(!_url)
 	{
 		_url = "";
@@ -85,12 +87,30 @@ function theme_analisor(_theme, _config)
 		});
 	});
 }
-
 window.onhashchange = function()
 {
 	var path = location.hash.replace('#', '');
 	router(path);
 }
-router("rollcall/edit:id=12");
-module.exports = router;
+
+History = {
+	state : 0,
+	get : function(index)
+	{
+		if(_HISTORY[index])
+		{
+			return _HISTORY[index];
+		}
+		return _HISTORY
+	},
+	back : function()
+	{
+		router(_HISTORY[length-2])
+	}
+}
+
+module.exports = {
+	"go" : router,
+	"history" : History
+};
 
