@@ -39,7 +39,8 @@
 				واحد درسی : <label>{{student.unit_title.parseFa()}} | {{student.term.parseFa()}}</label>
 			</div>
 			<div class="field inline">
-				تاریخ: <label>{{student.time.parseFa()}}</label>
+				<label for="time-st">تاریخ</label>
+				<input type="text" id="time-st" class="ltr" placeholder="تاریخ" :data-date="student.time">
 			</div>
 		</div>
 		<div class="two fields">

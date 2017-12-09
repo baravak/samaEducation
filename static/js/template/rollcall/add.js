@@ -1,10 +1,16 @@
 const db = require("../../../../backend/db.js");
 
 $(document).on('submit', "#rollcall-edit-form", function(){
-	db.run("UPDATE rollcall SET `absence` = ?, `justified` = ?, `cause` = ? WHERE id = ?", [
+	var time = $("#time-st").val().parseEn();
+	time = time.match(/^([0-9]{4})[-\/](0?[1-9]|1[0-2])[-\/](0?[0-9]|[1-2][0-9]|3[01])$/);
+	time[2] = Number(time[2]) < 10 ? "0"+ Number(time[2]) : Number(time[2]);
+	time[3] = Number(time[3]) < 10 ? "0"+ Number(time[3]) : Number(time[3]);
+	time[0] = time[1] + "-" + time[2] + "-" + time[3];
+	db.run("UPDATE rollcall SET `absence` = ?, `justified` = ?, `cause` = ?, `time` = ? WHERE id = ?", [
 		$('#absent').is(":checked") ? 0 : $("#lag").val() < 1 ? 1 : $("#lag").val(),
 		$('#justified').is(":checked") ? 0 : 1,
 		$('#cause').val() ? $('#cause').val() : null,
+		time[0],
 		$('#rollcall_isd').val(),
 		], function(err, result){
 			if(err)
@@ -19,7 +25,8 @@ $(document).on('submit', "#rollcall-edit-form", function(){
 $(document).on('submit', "#rollcall-add-form", function()
 {
 	var _self = this;
-	var time = $("#time").val().match("([0-9]{4})-(0?[1-9]|1[0-2])-(0?[0-9]|[1-2][0-9]|3[01])");
+	var time = $("#time-st").val().parseEn();
+	time = time.match(/^([0-9]{4})[-\/](0?[1-9]|1[0-2])[-\/](0?[0-9]|[1-2][0-9]|3[01])$/);
 	if(!time)
 	{
 		alert("تاریخ اشتباه است");
@@ -72,7 +79,9 @@ $(document).on('submit', "#rollcall-add-form", function()
 				{
 					$("#list").fadeIn('fast');
 				}
+				var tSval = $("#time-st").val();
 				$(_self)[0].reset();
+				$('#time-st').val(tSval)
 			});
-		});
+});
 });

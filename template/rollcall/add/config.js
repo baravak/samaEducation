@@ -52,10 +52,10 @@ module.exports = function(o){
 				format: 'YYYY/MM/DD',
 				altField : "#time",
 				altFormat : "YYYY-MM-DD",
-				persian : false,
+				persian : true,
 				calendar : {
 					persian : {
-						locale : 'en'
+						locale : 'fa'
 					}
 				}
 			});
