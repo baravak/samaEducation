@@ -51,7 +51,7 @@ $(document).on('submit', "#rollcall-add-form", function()
 		$("#student").val(),
 		$("#unit").val(),
 		time[0],
-		$('#absent').is(":checked") ? 0 : $("#lag").val() < 1 ? 1 : $("#lag").val(),
+		$('#absent').is(":checked") ? 0 : $("#lag").val() < 1 ? 1 : $("#lag").val().parseEn(),
 		$('#justified').is(":checked") ? 0 : 1,
 		$('#cause').val() ? $('#cause').val() : null
 		], function(error, rows)
@@ -72,13 +72,14 @@ $(document).on('submit', "#rollcall-add-form", function()
 					"<td>" + rows.unique_code + "</td>"+
 					"<td>" + rows.unit_title + " | ترم"+ rows.term +"</td>"+
 					"<td>" + time[0] +"</td>"+
-					"<td>" + ($('#absent').is(":checked") ? 'غیبت' : 'تاخیر ' + $("#lag").val() < 1 ? 1 : $("#lag").val() + "دقیقه")  +"</td>"+
+					"<td>" + ($('#absent').is(":checked") ? 'غیبت' : 'تاخیر ' + $("#lag").val() < 1 ? 1 : $("#lag").val().parseFa() + "دقیقه")  +"</td>"+
 					"</tr>").appendTo($("#list tbody"));
 				var first = $("#list").is('.hidden');
 				if(first)
 				{
 					$("#list").fadeIn('fast');
 				}
+				$("#lag").removeAttr('disabled');
 				var tSval = $("#time-st").val();
 				$(_self)[0].reset();
 				$('#time-st').val(tSval)
