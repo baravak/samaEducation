@@ -23,19 +23,21 @@ module.exports = function(o){
 		var gd = D.getDate();
 
 		var startJ = jalaali.toJalaali(gy, gm, gd);
-		var sjy = gm < 5 ? startJ.jy-1 : startJ.jy;
+		var sjy = startJ.jm < 5 ? startJ.jy-1 : startJ.jy;
 		var sjm = 5;
 		var sjd = 1;
 		db.get("SELECT * FROM students WHERE id = " + o.property.id, function(err, student_result)
 		{
-			var query = "SELECT students.*, rollcall.id AS rid, rollcall.time, rollcall.absence, rollcall.justified, rollcall.cause, units.unit_title, units.term "+
+			var query = "SELECT students.*, rollcall.id AS rid, rollcall.time, rollcall.absence, rollcall.Justified, rollcall.cause, units.unit_title, units.term "+
 				"FROM rollcall "+
 				"INNER JOIN students ON students.id = rollcall.student_id "+
 				"INNER JOIN units ON units.id = rollcall.unit_id " +
 				"WHERE rollcall.time > '"+ sjy + "-05-0' AND rollcall.time < '"+ (sjy+1) + "-05-0' AND students.id = " + o.property.id;
+			console.log(query)
 			db.all(query
 				,
 				function(err, list){
+					console.log(list)
 					rollcallDb.data = list;
 					for (var i = 0; i < list.length; i++) {
 						var row = list[i];
